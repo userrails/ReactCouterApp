@@ -5,7 +5,7 @@ import './App.css'
 class App extends React.Component {
 	render() {
 		return(
-			<div className="app-component"><h2>hello react!!</h2></div>
+			<div className="app-component"><h2>hello react!! {this.props.name} / {this.props.email}</h2></div>
 	  );
   }
 }
