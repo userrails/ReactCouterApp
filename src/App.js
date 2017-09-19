@@ -6,11 +6,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {count: 0};
+
+    // Option 1: enable this
+    this.addMore = this.addMore.bind(this);
   }
 
-  increment() {
-    console.log(this)
-    // this.setState({count: this.state.count + 1});
+  // Option 2: disable Option 1 and enable below code
+  // addMore = () => {
+  //   console.log(this)
+  //   this.setState({
+  //     count: this.state.count + 1
+  //   });
+  // }
+
+
+  // Option 1: enable this
+  addMore() {
+    this.setState({
+      count: this.state.count + 1
+    });
   }
 
   render() {
@@ -21,7 +35,7 @@ class App extends React.Component {
          {console.log(this)}
         <div>
           <p>Count: {this.state.count}</p>
-          <p><button onClick={this.increment}>Click!</button></p>
+          <p><button onClick={this.addMore}>{this.state.count}</button></p>
         </div>
       </div>
 	  );
