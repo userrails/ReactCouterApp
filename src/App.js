@@ -7,25 +7,26 @@ class App extends React.Component {
     super(props);
     this.state = {count: 0};
 
-    // Option 1: enable this
-    this.addMore = this.addMore.bind(this);
+    // Option 1: enable this and disable option 2
+    // this.addMore = this.addMore.bind(this);
   }
 
   // Option 2: disable Option 1 and enable below code
-  // addMore = () => {
-  //   console.log(this)
-  //   this.setState({
-  //     count: this.state.count + 1
-  //   });
-  // }
-
-
-  // Option 1: enable this
-  addMore() {
+  // arrow function take care of binding
+  addMore = () => {
+    console.log(this)
     this.setState({
       count: this.state.count + 1
     });
   }
+
+
+  // Option 1: enable this and disable Option 2
+  // addMore() {
+  //   this.setState({
+  //     count: this.state.count + 1
+  //   });
+  // }
 
   render() {
     return(
